@@ -2,15 +2,15 @@
 import { useState } from 'react';
 import './App.css';
 import Alert from './components/Alert';
-import About from './components/About';
+// import About from './components/About';
 import Navbar from './components/Navbar';
 import Textinp from './components/Textinp';
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+// import React from "react";
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route,
+// } from "react-router-dom";
 function App() {
 
   const[mode, setMode] = useState('light');
@@ -41,21 +41,22 @@ function App() {
   
   return (
    <>
-   <Router>
+   {/* <Router> */}
 <Navbar tittle = "TextUtills"  menu = "menu" mode = {mode} toggledark = {toggledark}/>
 <Alert alert = {alert}/>
 {/* <Navbar/> */}
-<Routes>
+{/* <Routes> */}
   {/* use exect always */}
-          <Route exect path="/about"
+          {/* <Route exect path="/about"
             element ={<About  mode = {mode}/>}>
-          </Route>
-          <Route exect path="/"
-           element =
-         {<Textinp heading = "Enter the text to analyze below" mode = {mode} showAlert ={showAlert}/>}>
-           </Route>
- </Routes> 
- </Router> 
+          </Route> */}
+          {/* <Route exect path="/"
+           element = */}
+         {/* {<Textinp heading = "Enter the text to analyze below" mode = {mode} showAlert ={showAlert}/>}> */}
+         <Textinp heading = "Enter the text to analyze below" mode = {mode} showAlert ={showAlert}/>
+           {/* </Route> */}
+ {/* </Routes> 
+ </Router>  */}
   </>
   );
   }
