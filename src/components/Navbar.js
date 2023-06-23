@@ -30,7 +30,7 @@ export default function Navbar(props) {
         </li> */}
         {/* <li className="nav-item">
           <a className="nav-link active" href="/about">About</a>
-        </li> */}
+      </li> */}
       </ul>
       {/* <button type="button" className="btn btn-danger ms-auto mx-3" onClick={danger}>Danger Mode</button> */}
 
