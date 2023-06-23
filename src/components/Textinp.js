@@ -10,6 +10,7 @@ export default function Textinp(props) {
         const newText = Text.toUpperCase()
         settext(newText)
         props.showAlert("Change to UpperCase", "sucess")
+        
     }
 
     const handleloCase = ()=>{
@@ -60,19 +61,19 @@ export default function Textinp(props) {
   <textarea className='form-control' rows="8" style ={{backgroundColor:props.mode==='light'?'#fff':'#607d8b', color:props.mode==='light'?'#000000':'#fff'}} value={Text} id="myBox" onChange={handleOnChange} aria-label="With textarea"></textarea>
 </div>
 
-<button className="btn btn-primary mx-2" onClick={handleUpperCase}>To Uppercase</button>
-<button className="btn btn-primary mx-2" onClick={handleloCase}>To Lowercase</button>
-<button className="btn btn-primary mx-2" onClick={cleartext}>Clear</button>
-<button className="btn btn-primary mx-2" onClick={replace}>replace word</button>
-<button className="btn btn-primary mx-2" onClick={backspace}>backspace</button>
-<button className="btn btn-primary mx-2" onClick={handleCopy}>copy</button>
-<button className="btn btn-primary mx-2" onClick={handlespace}>Remove extra space</button>
+<button disabled ={Text.length === 0} className="btn btn-primary mx-2" onClick={handleUpperCase}>To Uppercase</button>
+<button disabled ={Text.length === 0}className="btn btn-primary mx-2" onClick={handleloCase}>To Lowercase</button>
+<button disabled ={Text.length === 0}className="btn btn-primary mx-2" onClick={cleartext}>Clear</button>
+<button disabled ={Text.length === 0}className="btn btn-primary mx-2" onClick={replace}>replace word</button>
+<button disabled ={Text.length === 0}className="btn btn-primary mx-2" onClick={backspace}>backspace</button>
+<button disabled ={Text.length === 0}className="btn btn-primary mx-2" onClick={handleCopy}>copy</button>
+<button disabled ={Text.length === 0}className="btn btn-primary mx-2" onClick={handlespace}>Remove extra space</button>
 
 </div>
   <div className="container">
     <h2 className="my-3" style={{color:props.mode==='light'?'#000000':'#fff'}}>Your text summary</h2>
-    <p style={{color:props.mode==='light'?'#000000':'#fff'}}>{Text.split(" ").length-1} words and {Text.length} characters</p>
-    <p style={{color:props.mode==='light'?'#000000':'#fff'}}>{0.008 * Text.split(" ").length} minutes read</p>
+    <p style={{color:props.mode==='light'?'#000000':'#fff'}}>{Text.split(" ").filter((element)=>{return element.length!==0}).length} words and {Text.length} characters</p>
+    <p style={{color:props.mode==='light'?'#000000':'#fff'}}>{0.008 * Text.split(" ").filter((element)=>{return element.length!==0}).length} minutes read</p>
     <h2 style={{color:props.mode==='light'?'#000000':'#fff'}}>Preview</h2>
     <p style={{color:props.mode==='light'?'#000000':'#fff'}}>{Text}</p>
 
